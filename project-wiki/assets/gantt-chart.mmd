@@ -1,0 +1,82 @@
+gantt
+    title Senior Design Showcase Display - 25 Week Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %W
+    todayMarker stroke-width:2,stroke:red
+
+    %% Semester 1: Weeks 1-11 (Sep 14 - Dec 4, 2026)
+    %% Semester 2: Weeks 12-25 (Jan 25 - May 7, 2027)
+
+    section Semester 1 - Frontend UI
+    Touch UI Framework Research       :active, fe1, 2026-09-14, 2w
+    Project Grid and Card Components  :fe2, after fe1, 2w
+    Touch Navigation and Gestures     :fe3, after fe2, 2w
+    Project Detail View               :fe4, after fe3, 2w
+    Search and Filter UI              :fe5, after fe4, 2w
+
+    section Semester 1 - Backend CMS
+    Tech Stack Decision               :be1, 2026-09-14, 1w
+    Data Model and API Design         :be2, after be1, 2w
+    Project CRUD API                  :be3, after be2, 2w
+    Admin CMS (Auth, Projects)        :be4, after be3, 3w
+    Media Upload and Processing       :be5, after be4, 2w
+
+    section Semester 1 - Content Pipeline
+    Sample Data Creation              :cp1, 2026-09-28, 2w
+    Dept Archive Data Import          :cp2, after cp1, 3w
+    Media Standardization             :cp3, after cp2, 2w
+    Automated Import Pipeline         :cp4, after cp3, 2w
+
+    section Semester 1 - Infrastructure DevOps
+    Dev Environment Setup             :in1, 2026-09-14, 1w
+    CI/CD Pipeline                    :in2, after in1, 2w
+    Kiosk Mode Prototype              :in3, 2026-11-02, 2w
+    Staging Deployment                :in4, 2026-12-04, 1w
+
+    section Semester 1 - Testing QA
+    Unit and Integration Tests        :tq1, 2026-10-12, 4w
+    Touch Device Testing              :tq2, 2026-12-04, 2w
+
+    section Semester 2 - Frontend UI
+    Video and Interactive Player UI   :fe6, 2027-01-25, 2w
+    Polish Animations and Transitions :fe7, 2027-03-08, 2w
+    Accessibility Audit and Fixes     :fe8, 2027-03-22, 2w
+
+    section Semester 2 - Backend CMS
+    Analytics API                     :be6, 2027-01-25, 2w
+    Performance Optimization          :be7, 2027-03-22, 2w
+
+    section Semester 2 - Content Pipeline
+    Content QA and Verification       :cp5, 2027-02-08, 2w
+
+    section Semester 2 - Infrastructure DevOps
+    Production Deploy Prep            :in5, 2027-04-05, 2w
+    Production Deployment             :in6, 2027-05-07, 1w
+
+    section Semester 2 - Testing QA
+    Cross-Browser Testing             :tq3, 2027-03-08, 2w
+    Load and Stress Testing           :tq4, 2027-04-05, 2w
+    UAT with Client                   :tq5, 2027-05-07, 1w
+
+    %% Milestones (inline syntax)
+    M1 S1 Demo Week 11                :milestone, m1, 2026-12-04, 1d
+    M2 S2 Midpoint Review             :milestone, m2, 2027-03-08, 1d
+    M3 Final Demo Week 25             :milestone, m3, 2027-05-07, 1d
+
+    %% Dependencies
+    fe2 --> be3
+    fe3 --> fe2
+    fe4 --> be3
+    fe5 --> be3
+    fe6 --> be5
+    be4 --> be3
+    be5 --> be4
+    cp2 --> be3
+    cp4 --> be5
+    in3 --> fe3
+    in4 --> fe4
+    in5 --> fe7
+    tq1 --> be3
+    tq2 --> in3
+    tq3 --> fe7
+    tq4 --> be7

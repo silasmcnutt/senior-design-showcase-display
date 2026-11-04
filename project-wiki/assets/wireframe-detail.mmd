@@ -1,0 +1,53 @@
+flowchart TB
+    subgraph DetailView["Project Detail View - Full Screen"]
+        direction TB
+        
+        Header["┌─────────────────────────────────────────────┐"]
+        BackBtn["│  ◄ Back                                      │"]
+        Title["│  Autonomous Drone Swarm              [★]    │"]
+        Meta["│  2024 Fall  |  Team: A. Chen, B. Smith       │"]
+        Tags["│  [Robotics] [AI/ML] [Embedded] [C++] [ROS2] │"]
+        HeaderEnd["└─────────────────────────────────────────────┘"]
+        
+        Hero["┌─────────────────────────────────────────────┐"]
+        HeroMedia["│  [HERO IMAGE / VIDEO PLAYER - 16:9]         │"]
+        HeroControls["│  ⏮  ⏸  ▶  ⏭  🔊  🖥  [Picture-in-Picture]   │"]
+        HeroEnd["└─────────────────────────────────────────────┘"]
+        
+        Main["┌─────────────────────────────────────────────┐"]
+        DescTitle["│  DESCRIPTION                                │"]
+        DescText["│  A coordinated fleet of autonomous drones   │"]
+        DescText2["│  that communicate via mesh network to       │"]
+        DescText3["│  perform search and rescue operations...    │"]
+        
+        GalleryTitle["│  GALLERY (swipe to navigate)                │"]
+        Gallery["│  ◄ [thumb1] [thumb2] [thumb3] [thumb4] ►    │"]
+        GalleryDots["│  ● ○ ○ ○                                    │"]
+        
+        LinksTitle["│  LINKS                                      │"]
+        GHLink["│  [GitHub] https://github.com/team/drone-swarm│"]
+        DemoLink["│  [Live Demo] https://drone-swarm.demo.com    │"]
+        VideoLink["│  [Video] https://youtube.com/watch/...       │"]
+        MainEnd["└─────────────────────────────────────────────┘"]
+        
+        Footer["┌─────────────────────────────────────────────┐"]
+        QRBtn["│  [QR] Save to Phone                          │"]
+        ShareBtn["│  [Share]                                     │"]
+        FooterEnd["└─────────────────────────────────────────────┘"]
+    end
+
+    Header --> BackBtn --> Title --> Meta --> Tags --> HeaderEnd
+    HeaderEnd --> Hero
+    Hero --> HeroMedia --> HeroControls --> HeroEnd
+    HeroEnd --> Main
+    Main --> DescTitle --> DescText --> DescText2 --> DescText3
+    Main --> GalleryTitle --> Gallery --> GalleryDots
+    Main --> LinksTitle --> GHLink --> DemoLink --> VideoLink --> MainEnd
+    MainEnd --> Footer
+    Footer --> QRBtn --> ShareBtn --> FooterEnd
+
+    style DetailView fill:#1a1a2e,stroke:#ffd700,stroke-width:2px
+    style Header fill:#16213e,stroke:#0f3460
+    style Hero fill:#0f3460,stroke:#ffd700
+    style Main fill:#16213e,stroke:#0f3460
+    style Footer fill:#16213e,stroke:#0f3460

@@ -1,0 +1,12 @@
+gantt
+    title Test
+    dateFormat YYYY-MM-DD
+    axisFormat %W
+
+    section Test
+    Task 1 :t1, 2026-09-14, 2w
+    Task 2 :t2, after t1, 2w
+
+    M1 Milestone :milestone, m1, 2026-12-04, 1d
+
+    t1 --> t2

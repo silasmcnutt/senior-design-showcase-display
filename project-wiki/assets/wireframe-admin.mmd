@@ -1,0 +1,55 @@
+flowchart TB
+    subgraph AdminCMS["Admin CMS - Dashboard View"]
+        direction TB
+        
+        TopBar["┌─────────────────────────────────────────────┐"]
+        Logo["│  [LOGO] Senior Design Showcase  Admin       │"]
+        User["│  Welcome, admin@university.edu  [Logout]    │"]
+        TopBarEnd["└─────────────────────────────────────────────┘"]
+        
+        Sidebar["┌────────────┐┌───────────────────────────────┐"]
+        Nav["│ ☰ MENU     ││                               │"]
+        Nav1["│ 📊 Dashboard││                               │"]
+        Nav2["│ 📁 Projects ││                               │"]
+        Nav3["│ 🏷️ Tags     ││                               │"]
+        Nav4["│ 📈 Analytics││                               │"]
+        Nav5["│ ⚙️ Settings ││                               │"]
+        SidebarEnd["└────────────┘└───────────────────────────────┘"]
+        
+        Content["┌─────────────────────────────────────────────┐"]
+        PageTitle["│  Projects                          [+ Add]  │"]
+        Toolbar["│  [🔍 Search] [▼ All Years] [▼ All Tags]     │"]
+        Toolbar2["│  [▼ Published] [▼ Featured] [Sort: Order ▼] │"]
+        
+        Table["│ ┌────┬────────────────┬────┬──────┬────┬───┐ │"]
+        Th["│ │ #  │ Title          │Year│ Tags │ Fea│ ⋮ │ │"]
+        Row1["│ │ 1  │ Drone Swarm    │2024│[R][A]│ ★  │⋮  │ │"]
+        Row2["│ │ 2  │ Smart Home     │2024│[I][W]│    │⋮  │ │"]
+        Row3["│ │ 3  │ VR Training    │2023│[V][G]│ ★  │⋮  │ │"]
+        Row4["│ │ 4  │ Auto Grader    │2023│[A][E]│    │⋮  │ │"]
+        Row5["│ │ 5  │ Health Monitor │2024│[M][H]│ ★  │⋮  │ │"]
+        TableEnd["│ └────┴────────────────┴────┴──────┴────┴───┘ │"]
+        
+        Pagination["│  ◄ Prev    1 2 3 4 5    Next ►   (27 total)  │"]
+        ContentEnd["└─────────────────────────────────────────────┘"]
+        
+        Footer["┌─────────────────────────────────────────────┐"]
+        Status["│  Last sync: 2 min ago  |  27 projects       │"]
+        FooterEnd["└─────────────────────────────────────────────┘"]
+    end
+
+    TopBar --> Logo --> User --> TopBarEnd
+    TopBarEnd --> Sidebar
+    Sidebar --> Nav --> Nav1 --> Nav2 --> Nav3 --> Nav4 --> Nav5 --> SidebarEnd
+    TopBarEnd --> Content
+    Content --> PageTitle --> Toolbar --> Toolbar2 --> Table
+    Table --> Th --> Row1 --> Row2 --> Row3 --> Row4 --> Row5 --> TableEnd
+    TableEnd --> Pagination --> ContentEnd
+    ContentEnd --> Footer
+    Footer --> Status --> FooterEnd
+
+    style AdminCMS fill:#1a1a2e,stroke:#ff6b35,stroke-width:2px
+    style TopBar fill:#16213e,stroke:#0f3460
+    style Sidebar fill:#0f3460,stroke:#ff6b35
+    style Content fill:#16213e,stroke:#0f3460
+    style Footer fill:#16213e,stroke:#0f3460

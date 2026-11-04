@@ -1,0 +1,75 @@
+erDiagram
+    PROJECT ||--o{ PROJECT_TAG : has
+    PROJECT ||--o{ PROJECT_MEDIA : has
+    PROJECT ||--o{ ANALYTICS_EVENT : generates
+    TAG ||--o{ PROJECT_TAG : labels
+    MEDIA ||--o{ PROJECT_MEDIA : used_in
+    ADMIN_USER ||--o{ PROJECT : manages
+
+    PROJECT {
+        uuid id PK
+        string title
+        string description
+        string short_description
+        int year
+        string semester
+        string[] team_members
+        string[] tech_stack
+        string github_url
+        string live_demo_url
+        string video_url
+        boolean featured
+        boolean published
+        timestamp created_at
+        timestamp updated_at
+        int display_order
+    }
+
+    TAG {
+        uuid id PK
+        string name UK
+        string category
+        string color_hex
+    }
+
+    PROJECT_TAG {
+        uuid project_id FK
+        uuid tag_id FK
+    }
+
+    MEDIA {
+        uuid id PK
+        string filename
+        string mime_type
+        int size_bytes
+        int width
+        int height
+        int duration_sec
+        string storage_path
+        timestamp uploaded_at
+    }
+
+    PROJECT_MEDIA {
+        uuid project_id FK
+        uuid media_id FK
+        string role
+        int display_order
+    }
+
+    ANALYTICS_EVENT {
+        uuid id PK
+        uuid project_id FK
+        string event_type
+        jsonb metadata
+        timestamp occurred_at
+        string session_id
+    }
+
+    ADMIN_USER {
+        uuid id PK
+        string cas_uid UK
+        string name
+        string email
+        string role
+        timestamp last_login
+    }

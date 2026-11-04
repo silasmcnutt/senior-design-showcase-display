@@ -1,0 +1,20 @@
+gantt
+    title Test
+    dateFormat YYYY-MM-DD
+    axisFormat %W
+
+    section Semester 1 - Frontend UI
+    Touch UI Framework Research       :active, fe1, 2026-09-14, 2w
+    Project Grid and Card Components  :fe2, after fe1, 2w
+    Touch Navigation and Gestures     :fe3, after fe2, 2w
+
+    section Semester 1 - Backend CMS
+    Tech Stack Decision               :be1, 2026-09-14, 1w
+    Data Model and API Design         :be2, after be1, 2w
+    Project CRUD API                  :be3, after be2, 2w
+
+    %% Dependencies before milestones
+    fe2 --> be3
+
+    %% Milestones (inline syntax)
+    M1 S1 Demo Week 11                :milestone, m1, 2026-12-04, 1d

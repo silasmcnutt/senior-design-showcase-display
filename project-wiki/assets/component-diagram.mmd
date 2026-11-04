@@ -1,0 +1,35 @@
+graph LR
+    subgraph FE["Frontend (React PWA)"]
+        App["App.tsx: Routes, Providers"]
+        Pages["Pages"]
+        Comp["Components"]
+        Hooks["Hooks"]
+        Utils["Utils"]
+    end
+
+    subgraph BE["Backend (Express)"]
+        Routes["Routes"]
+        Ctrl["Controllers"]
+        Svc["Services"]
+        Mid["Middleware"]
+        Models["Models"]
+    end
+
+    subgraph Shared["Shared Types"]
+        Types["showcase-types: Project, Tag, AnalyticsEvent"]
+    end
+
+    App --> Pages
+    Pages --> Comp
+    Pages --> Hooks
+    Hooks --> Utils
+    Comp --> Hooks
+    Pages --> API["API Client"]
+    API --> Routes
+    Routes --> Mid
+    Mid --> Ctrl
+    Ctrl --> Svc
+    Svc --> Models
+    Models --> Types
+    FE -.-> Types
+    BE -.-> Types

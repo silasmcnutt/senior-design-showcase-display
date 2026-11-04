@@ -1,0 +1,41 @@
+flowchart TB
+    subgraph AttractMode["Attract Mode - Full Screen"]
+        direction TB
+        Header["┌─────────────────────────────────────────────┐"]
+        Title["│  SENIOR DESIGN SHOWCASE                     │"]
+        Subtitle["│  CSE Department - Past Capstone Projects    │"]
+        HeaderEnd["└─────────────────────────────────────────────┘"]
+        
+        Carousel["┌─────────────────────────────────────────────┐"]
+        HeroImage["│  [HERO IMAGE / VIDEO - 1920x1080]           │"]
+        CarouselInfo["│  Ken Burns pan/zoom effect                  │"]
+        CarouselEnd["└─────────────────────────────────────────────┘"]
+        
+        ProjectInfo["┌─────────────────────────────────────────────┐"]
+        ProjTitle["│  Project: Autonomous Drone Swarm            │"]
+        ProjYear["│  Year: 2024  |  Semester: Fall              │"]
+        ProjTags["│  Tags: Robotics | AI/ML | Embedded          │"]
+        ProjEnd["└─────────────────────────────────────────────┘"]
+        
+        Prompt["┌─────────────────────────────────────────────┐"]
+        PromptText["│  ██████████████████████████████████████████  │"]
+        PromptMsg["│  Touch anywhere to explore projects ►       │"]
+        PromptEnd["└─────────────────────────────────────────────┘"]
+        
+        Dots["● ○ ○ ○ ○  (5 projects rotating)"]
+    end
+
+    Header --> Title --> Subtitle --> HeaderEnd
+    HeaderEnd --> Carousel
+    Carousel --> HeroImage --> CarouselInfo --> CarouselEnd
+    CarouselEnd --> ProjectInfo
+    ProjectInfo --> ProjTitle --> ProjYear --> ProjTags --> ProjEnd
+    ProjEnd --> Prompt
+    Prompt --> PromptText --> PromptMsg --> PromptEnd
+    PromptEnd --> Dots
+
+    style AttractMode fill:#1a1a2e,stroke:#e94560,stroke-width:2px
+    style Header fill:#16213e,stroke:#0f3460
+    style Carousel fill:#16213e,stroke:#0f3460
+    style ProjectInfo fill:#16213e,stroke:#0f3460
+    style Prompt fill:#e94560,stroke:#ff6b6b

@@ -1,0 +1,15 @@
+gantt
+    title Test
+    dateFormat YYYY-MM-DD
+    axisFormat %W
+
+    section Frontend
+    Task 1 :t1, 2026-09-14, 2w
+    Task 2 :t2, after t1, 2w
+
+    section Backend
+    Task A :a1, 2026-09-14, 1w
+    Task B :a2, after a1, 2w
+
+    %% Try depends keyword
+    depends t2 on a2

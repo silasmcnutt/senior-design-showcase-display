@@ -1,0 +1,54 @@
+graph TB
+    subgraph Display["DSB 268 Display Hardware"]
+        Kiosk[("Kiosk Browser\nChrome or Edge Kiosk Mode")]
+    end
+
+    subgraph App["Showcase Application (PWA)"]
+        UI["Touch UI Layer\nReact + TypeScript"]
+        State["State Management\nZustand or Redux"]
+        API["API Client\nAxios + SWR"]
+        Assets["Asset Cache\nService Worker"]
+    end
+
+    subgraph Backend["Backend Services (Node.js/Express)"]
+        Auth["Auth Middleware\nCampus CAS/SSO"]
+        ProjectsAPI["Projects API\nCRUD + Search"]
+        MediaAPI["Media API\nUpload/Transform"]
+        AnalyticsAPI["Analytics API\nEvent Ingestion"]
+        CMS["Admin CMS UI\nProtected Routes"]
+    end
+
+    subgraph Data["Data Layer"]
+        DB[("PostgreSQL\nProjects, Tags, Analytics")]
+        Blob[("Object Storage\nS3-compatible or MinIO\nImages, Videos, Files")]
+    end
+
+    subgraph External["External"]
+        CAS["Campus CAS/SSO"]
+        GitHub["GitHub Links\n(External)"]
+        Deploy["Deployment Target\nDept VM or On-Prem K8s"]
+    end
+
+    Kiosk --> UI
+    UI --> State
+    State --> API
+    API --> ProjectsAPI
+    API --> MediaAPI
+    API --> AnalyticsAPI
+    UI --> Assets
+    Assets --> Blob
+    ProjectsAPI --> DB
+    MediaAPI --> Blob
+    AnalyticsAPI --> DB
+    CMS --> Auth
+    Auth --> CAS
+    ProjectsAPI -.-> GitHub
+    Deploy --> Kiosk
+    Deploy --> Backend
+    Deploy --> Data
+
+    style Kiosk fill:#fff3e0,stroke:#e65100
+    style UI fill:#e3f2fd,stroke:#1565c0
+    style DB fill:#e8f5e9,stroke:#2e7d32
+    style Blob fill:#fce4ec,stroke:#c2185b
+    style CAS fill:#f3e5f5,stroke:#7b1fa2

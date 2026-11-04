@@ -1,0 +1,55 @@
+flowchart TB
+    subgraph ProjectGrid["Project Grid View - Full Screen"]
+        direction TB
+        
+        Header["┌─────────────────────────────────────────────┐"]
+        GridTitle["│  ALL PROJECTS                        [≡]    │"]
+        Search["│  [🔍 Search projects...]                    │"]
+        Filters["│  [All] [Robotics] [AI/ML] [Web] [Embedded]  │"]
+        HeaderEnd["└─────────────────────────────────────────────┘"]
+        
+        Grid["┌─────────────────────────────────────────────┐"]
+        Row1["│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ │"]
+        Card1["│ │ [IMG]   │ │ [IMG]   │ │ [IMG]   │ │ [IMG]   │ │"]
+        Card1Title["│ │ Drone   │ │ Smart   │ │ VR      │ │ Auto    │ │"]
+        Card1Sub["│ │ Swarm   │ │ Home    │ │ Training│ │ Grader  │ │"]
+        Card1Tags["│ │ [Robo]  │ │ [IoT]   │ │ [VR]    │ │ [AI]    │ │"]
+        Row1End["│ └─────────┘ └─────────┘ └─────────┘ └─────────┘ │"]
+        
+        Row2["│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ │"]
+        Card2["│ │ [IMG]   │ │ [IMG]   │ │ [IMG]   │ │ [IMG]   │ │"]
+        Card2Title["│ │ Health  │ │ Game    │ │ Data    │ │ Cyber   │ │"]
+        Card2Sub["│ │ Monitor │ │ Engine  │ │ Viz     │ │ Tool    │ │"]
+        Card2Tags["│ │ [Med]   │ │ [Game]  │ │ [Viz]   │ │ [Sec]   │ │"]
+        Row2End["│ └─────────┘ └─────────┘ └─────────┘ └─────────┘ │"]
+        
+        Row3["│ ┌─────────┐ ┌─────────┐                         │"]
+        Card3["│ │ [IMG]   │ │ [IMG]   │                         │"]
+        Card3Title["│ │ Block   │ │ Lang    │                         │"]
+        Card3Sub["│ │ Chain   │ │ Learn   │                         │"]
+        Card3Tags["│ │ [Web3]  │ │ [NLP]   │                         │"]
+        Row3End["│ └─────────┘ └─────────┘                         │"]
+        GridEnd["└─────────────────────────────────────────────┘"]
+        
+        Footer["┌─────────────────────────────────────────────┐"]
+        Pagination["│  ◄ Prev    Page 1 of 3    Next ►            │"]
+        Count["│  Showing 10 of 27 projects                  │"]
+        FooterEnd["└─────────────────────────────────────────────┘"]
+    end
+
+    Header --> GridTitle --> Search --> Filters --> HeaderEnd
+    HeaderEnd --> Grid
+    Grid --> Row1
+    Row1 --> Card1 --> Card1Title --> Card1Sub --> Card1Tags --> Row1End
+    Row1End --> Row2
+    Row2 --> Card2 --> Card2Title --> Card2Sub --> Card2Tags --> Row2End
+    Row2End --> Row3
+    Row3 --> Card3 --> Card3Title --> Card3Sub --> Card3Tags --> Row3End
+    Row3End --> GridEnd
+    GridEnd --> Footer
+    Footer --> Pagination --> Count --> FooterEnd
+
+    style ProjectGrid fill:#1a1a2e,stroke:#00d4aa,stroke-width:2px
+    style Header fill:#16213e,stroke:#0f3460
+    style Grid fill:#0f3460,stroke:#00d4aa
+    style Footer fill:#16213e,stroke:#0f3460
