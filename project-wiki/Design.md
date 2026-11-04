@@ -258,117 +258,156 @@ erDiagram
 
 #### A. Attract Mode (Idle Screen)
 
-```mermaid
-flowchart TB
-    subgraph Screen["Display Screen"]
-        Hero["Hero Area\n[Ken Burns pan/zoom on project image]"]
-        Info["Project Info Card\n\"Autonomous Drone Swarm\" - 2024 Fall\nAI/ML, Robotics, Computer Vision\n[Touch anywhere to explore]"]
-        Nav["[Auto-advances every 15s]"]
-    end
-
-    Hero --> Info
-    Info --> Nav
-    Nav --> Hero
-
-    style Hero fill:#1a1a2e,stroke:#e65100,stroke-width:2,color:#fff
-    style Info fill:#16213e,stroke:#1565c0,stroke-width:2,color:#fff
-    style Nav fill:#0f0f23,stroke:#7b1fa2,stroke-width:1,color:#aaa
+```
+┌─────────────────────────────────────────────────────────────┐
+│  SENIOR DESIGN SHOWCASE                                      │
+│  CSE Department · Past Capstone Projects                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │                                                     │   │
+│   │           [HERO IMAGE / VIDEO]                      │   │
+│   │           Ken Burns pan/zoom effect                 │   │
+│   │           1920×1080 full-screen                     │   │
+│   │                                                     │   │
+│   └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │  Project: Autonomous Drone Swarm                    │   │
+│   │  Year: 2024 Fall  |  Semester: Fall                 │   │
+│   │  Tags: [Robotics] [AI/ML] [Embedded] [Computer Vis] │   │
+│   └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│   █████████████████████████████████████████████████████████  │
+│   █  Touch anywhere to explore projects ►                  █  │
+│   █████████████████████████████████████████████████████████  │
+│                                                             │
+│                    ●  ○  ○  ○  ○   (5 projects rotating)   │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 #### B. Project Grid (Main Browser)
 
-```mermaid
-flowchart TB
-    subgraph Grid["Project Grid Screen"]
-        Header["Senior Design Showcase | Search"]
-        Filters["Filter: All | Year: All | Category: All | Tech: All | Sort: Newest | Reset"]
-        
-        subgraph Row1["Row 1"]
-            Card1["[IMG] Drone Swarm\n2024 Fall | AI/ML"]
-            Card2["[IMG] StudyBuddy\n2024 Fall | Web, Ed"]
-            Card3["[IMG] CodeViz\n2023 Spring | DevTools"]
-            Card4["[IMG] EcoTrack\n2023 Fall | IoT, Env"]
-        end
-        
-        subgraph Row2["Row 2"]
-            Card5["[IMG] MedScan\n2023 Spring | Health"]
-            Card6["[IMG] GameForge\n2022 Fall | Games"]
-            Card7["[IMG] SecureChat\n2022 Spring | Security"]
-            Card8["[IMG] RoboArm\n2022 Fall | Robotics"]
-        end
-        
-        Hint["[Swipe or drag to scroll - Tap card for details]"]
-    end
-
-    Header --> Filters
-    Filters --> Row1
-    Row1 --> Row2
-    Row2 --> Hint
-
-    style Header fill:#1a1a2e,stroke:#e65100,color:#fff
-    style Filters fill:#16213e,stroke:#1565c0,color:#fff
-    style Row1 fill:#0f0f23,stroke:#333
-    style Row2 fill:#0f0f23,stroke:#333
-    style Hint fill:#1a1a2e,stroke:#7b1fa2,color:#aaa
+```
+┌─────────────────────────────────────────────────────────────┐
+│  SENIOR DESIGN SHOWCASE                           [≡ Menu]  │
+├─────────────────────────────────────────────────────────────┤
+│  [🔍 Search projects...]                                    │
+│  [All ▼] [Year: All ▼] [Category: All ▼] [Tech: All ▼]     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐   │
+│  │  [IMG]    │ │  [IMG]    │ │  [IMG]    │ │  [IMG]    │   │
+│  │ Drone     │ │ StudyBuddy│ │ CodeViz   │ │ EcoTrack  │   │
+│  │ Swarm     │ │ 2024 Fall │ │ 2023 Spr  │ │ 2023 Fall │   │
+│  │ 2024 Fall │ │ [Web][Ed] │ │ [DevTools]│ │ [IoT][Env]│   │
+│  │ [Robotics][AI/ML]       │             │             │   │
+│  └───────────┘ └───────────┘ └───────────┘ └───────────┘   │
+│                                                             │
+│  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐   │
+│  │  [IMG]    │ │  [IMG]    │ │  [IMG]    │ │  [IMG]    │   │
+│  │ MedScan   │ │ GameForge │ │ SecureChat│ │ RoboArm   │   │
+│  │ 2023 Spr  │ │ 2022 Fall │ │ 2022 Spr  │ │ 2022 Fall │   │
+│  │ [Health]  │ │ [Games]   │ │ [Security]│ │ [Robotics]│   │
+│  └───────────┘ └───────────┘ └───────────┘ └───────────┘   │
+│                                                             │
+│  ┌───────────┐ ┌───────────┐                               │
+│  │  [IMG]    │ │  [IMG]    │                               │
+│  │ BlockChain│ │ LangLearn │                               │
+│  │ 2024 Fall │ │ 2023 Spr  │                               │
+│  │ [Web3]    │ │ [NLP][Ed] │                               │
+│  └───────────┘ └───────────┘                               │
+│                                                             │
+│  [Swipe or drag to scroll  ·  Tap card for details]        │
+│                                                             │
+│  ◄ Prev    Page 1 of 3    Next ►    Showing 10 of 27       │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 #### C. Project Detail View
 
-```mermaid
-flowchart TB
-    subgraph Detail["Project Detail Screen"]
-        Nav["[Back] | [Featured]"]
-        Hero["Hero Media\n[Hero Image/Video - tap for fullscreen]"]
-        Title["Autonomous Drone Swarm | 2024 Fall"]
-        Desc["A coordinated fleet of 10+ drones performing search-and-rescue\npatterns using decentralized consensus algorithms.\nBuilt with ROS 2, Python, and custom PCB flight controllers"]
-        Meta["Team: Alice Chen, Bob Smith, Carol Davis, Dan Lee\nTech: ROS 2, Python, C++, PCB Design, ML\nTags: Robotics, AI/ML, Embedded, Research"]
-        Actions["[Photos Gallery] [Video Demo] [Live Demo] [GitHub Repo]"]
-        QR["[QR Code]  Scan to open on your phone"]
-    end
-
-    Nav --> Hero
-    Hero --> Title
-    Title --> Desc
-    Desc --> Meta
-    Meta --> Actions
-    Actions --> QR
-
-    style Nav fill:#1a1a2e,stroke:#7b1fa2,color:#fff
-    style Hero fill:#16213e,stroke:#e65100,color:#fff
-    style Title fill:#0f0f23,stroke:#333,color:#fff
-    style Desc fill:#0f0f23,stroke:#333,color:#ddd
-    style Meta fill:#0f0f23,stroke:#333,color:#bbb
-    style Actions fill:#1a1a2e,stroke:#1565c0,color:#fff
-    style QR fill:#1a1a2e,stroke:#7b1fa2,color:#aaa
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ◄ Back                                    [★ Featured]     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                                                     │   │
+│  │           [HERO IMAGE / VIDEO PLAYER]               │   │
+│  │           16:9 aspect ratio  ·  Tap for fullscreen  │   │
+│  │                                                     │   │
+│  │           ⏮  ⏸  ▶  ⏭  🔊  🖥  [PiP]               │   │
+│  │                                                     │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  Autonomous Drone Swarm                    |  2024 Fall     │
+│                                                             │
+│  A coordinated fleet of 10+ drones performing search-and-  │
+│  rescue patterns using decentralized consensus algorithms. │
+│  Built with ROS 2, Python, and custom PCB flight           │
+│  controllers.                                               │
+│                                                             │
+│  ─────────────────────────────────────────────────────────  │
+│                                                             │
+│  Team: Alice Chen, Bob Smith, Carol Davis, Dan Lee         │
+│  Tech: [ROS 2] [Python] [C++] [PCB Design] [ML]            │
+│  Tags: [Robotics] [AI/ML] [Embedded] [Research]            │
+│                                                             │
+│  ─────────────────────────────────────────────────────────  │
+│                                                             │
+│  GALLERY (swipe to navigate)                               │
+│  ◄ [thumb1] [thumb2] [thumb3] [thumb4] ►    ● ○ ○ ○        │
+│                                                             │
+│  ─────────────────────────────────────────────────────────  │
+│                                                             │
+│  LINKS                                                      │
+│  [GitHub]       https://github.com/team/drone-swarm        │
+│  [Live Demo]    https://drone-swarm.demo.com               │
+│  [Video]        https://youtube.com/watch/...              │
+│                                                             │
+│  ─────────────────────────────────────────────────────────  │
+│                                                             │
+│  [QR Code] Save to Phone         [Share]                   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 #### D. Admin CMS - Project List
 
-```mermaid
-flowchart TB
-    subgraph Admin["Admin Dashboard"]
-        Header["Admin Dashboard | [+ Add Project]"]
-        Search["Search projects... | [Filters]"]
-        
-        subgraph Table["Project Table"]
-            Head["[ ] | Title | Year | Status | Ord | Actions"]
-            Row1["[ ] | Drone Swarm | 2024F | Published | 1 | [Edit] [Delete]"]
-            Row2["[ ] | StudyBuddy | 2024F | Published | 2 | [Edit] [Delete]"]
-            Row3["[ ] | CodeViz | 2023S | Published | 3 | [Edit] [Delete]"]
-            Row4["[ ] | Old Project | 2020F | Archived | - | [Edit] [Delete]"]
-        end
-        
-        Bulk["[Drag to reorder] [Bulk: Feature Delete Archive]"]
-    end
-
-    Header --> Search
-    Search --> Table
-    Table --> Bulk
-
-    style Header fill:#1a1a2e,stroke:#e65100,color:#fff
-    style Search fill:#16213e,stroke:#1565c0,color:#fff
-    style Table fill:#0f0f23,stroke:#333
-    style Bulk fill:#1a1a2e,stroke:#7b1fa2,color:#aaa
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [LOGO] Senior Design Showcase  Admin      Welcome, admin  │
+│  █████████████████████████████████████████████████████████  │
+│                                                             │
+│  ☰ MENU                    PROJECTS                    [+ Add Project]│
+│  📊 Dashboard                                                          │
+│  📁 Projects  ◄── Active                                                        │
+│  🏷️ Tags                                                               │
+│  📈 Analytics                                                           │
+│  ⚙️ Settings                                                            │
+│                                                             │
+│  [🔍 Search projects...]        [▼ Year] [▼ Tags] [▼ Status]        │
+│  [▼ Published] [▼ Featured] [Sort: Order ▼]                        │
+│                                                             │
+│  ┌────┬──────────────────────┬──────┬──────────┬────┬────────┐ │
+│  │ ☐  │ Title                │ Year │ Tags     │ Fea│ Actions│ │
+│  ├────┼──────────────────────┼──────┼──────────┼────┼────────┤ │
+│  │ ☐  │ Autonomous Drone Swarm│ 2024F│[R][A]    │ ★  │[Edit][🗑]│ │
+│  │ ☐  │ StudyBuddy           │ 2024F│[W][Ed]   │    │[Edit][🗑]│ │
+│  │ ☐  │ CodeViz              │ 2023S│[Dev]     │ ★  │[Edit][🗑]│ │
+│  │ ☐  │ EcoTrack             │ 2023F│[IoT][Env]│    │[Edit][🗑]│ │
+│  │ ☐  │ MedScan              │ 2023S│[Health]  │ ★  │[Edit][🗑]│ │
+│  │ ☐  │ GameForge            │ 2022F│[Games]   │    │[Edit][🗑]│ │
+│  │ ☐  │ SecureChat           │ 2022S│[Sec]     │    │[Edit][🗑]│ │
+│  │ ☐  │ RoboArm              │ 2022F│[Robotics]│    │[Edit][🗑]│ │
+│  └────┴──────────────────────┴──────┴──────────┴────┴────────┘ │
+│                                                             │
+│  [Drag to reorder rows]    [Bulk: Feature  Delete  Archive]│
+│                                                             │
+│  ◄ Prev    1  2  3  4  5    Next ►      (27 total projects)│
+│                                                             │
+│  Last sync: 2 min ago  |  27 projects  |  124 media files  │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
